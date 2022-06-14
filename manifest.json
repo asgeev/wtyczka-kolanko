@@ -3,11 +3,15 @@
     "description": "Wtyczka obsługująca SZOI oraz EZD",
     "version": "1.0",
     "manifest_version": 3,
+    "permissions": ["activeTab", "declarativeContent", "storage", "scripting"],
+         
     "content_scripts": [
         {
-          "matches": ["ezd.nfz-lublin.pl/*, www-2.nfz-lublin.pl/*"],
+          "matches": ["*://ezd.nfz-lublin.pl/*"],
           "css": ["style.css"],
           "js": ["index.js"]
         }
       ]
   }
+
+  
