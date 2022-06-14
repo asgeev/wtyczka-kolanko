@@ -1,5 +1,13 @@
-.naglowekBar {
-
-background-color: cyan !important;
-
+#notebtndiv {
+    padding:15px;
+}
+button.notebtn {
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    border: 1px solid black;
+    font-family: "Segoe UI",Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    text-align: center;
+    height: 22px;
 }
