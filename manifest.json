@@ -1,0 +1,6 @@
+{
+    "name": "Wtyczka kolanko",
+    "description": "Wtyczka obsługująca SZOI oraz EZD",
+    "version": "1.0",
+    "manifest_version": 3
+  }
