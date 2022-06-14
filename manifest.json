@@ -3,13 +3,15 @@
     "description": "Wtyczka obsługująca SZOI oraz EZD",
     "version": "1.0",
     "manifest_version": 3,
-    "permissions": ["activeTab", "declarativeContent", "storage", "scripting"],
+    "permissions": ["activeTab", "declarativeContent", "storage", "scripting", "tabs"],
          
     "content_scripts": [
         {
-          "matches": ["*://ezd.nfz-lublin.pl/*"],
-          "css": ["styleEZD.css", "styleSZOI.css"],
-          "js": ["ezd.js", "szoi.js"]
+            
+                    "matches": ["*://ezd.nfz-lublin.pl/*", "*://www-2.nfz-lublin.pl/ap-mzwi-adm/*"],
+                    "css": ["styleEZD.css", "styleSZOI.css"],
+                    "js": ["index.js"]
+          
         }
       ]
   }
