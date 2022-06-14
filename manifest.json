@@ -9,7 +9,7 @@
         {
           "matches": ["*://ezd.nfz-lublin.pl/*"],
           "css": ["style.css"],
-          "js": ["ezd.js"]
+          "js": ["ezd.js, szoi.js"]
         }
       ]
   }
