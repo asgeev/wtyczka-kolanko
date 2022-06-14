@@ -8,8 +8,8 @@
     "content_scripts": [
         {
           "matches": ["*://ezd.nfz-lublin.pl/*"],
-          "css": ["style.css"],
-          "js": ["ezd.js, szoi.js"]
+          "css": ["styleEZD.css", "styleSZOI.css"],
+          "js": ["ezd.js", "szoi.js"]
         }
       ]
   }
