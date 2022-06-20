@@ -10,9 +10,8 @@
     },
     "content_scripts": [
         {
-            
-                    "matches": ["*://ezd.nfz-lublin.pl/*", "*://www-2.nfz-lublin.pl/ap-mzwi-adm/*"],
-                    "css": ["./src/ezd/styleEZD.css", "./src/szoi/styleSZOI.css"]
+        "matches": ["*://ezd.nfz-lublin.pl/*", "*://www-2.nfz-lublin.pl/ap-mzwi-adm/*"],
+        "css": ["./src/ezd/styleEZD.css", "./src/szoi/styleSZOI.css"]
         }
       ]
   }
