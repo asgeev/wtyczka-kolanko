@@ -8,11 +8,9 @@
         "service_worker": "./src/background.js",
         "type": "module"
     },
-    "content_scripts": [
-        {
-        "matches": ["*://ezd.nfz-lublin.pl/*", "*://www-2.nfz-lublin.pl/ap-mzwi-adm/*"],
-        "css": ["./src/ezd/styleEZD.css", "./src/szoi/styleSZOI.css"]
-        }
+    "host_permissions": [
+        "*://ezd.nfz-lublin.pl/*",
+        "*://www-2.nfz-lublin.pl/ap-mzwi-adm/*"
       ]
   }
 

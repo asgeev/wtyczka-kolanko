@@ -1,9 +1,19 @@
 
+    const button = document.querySelector('.button_big')
 
-export const aa = () => {
+    if(button){
+        
+        button.classList.add("red")
 
-    console.log('Z wnetrza pliku szoi.js')
-
-}
+    }
 
 
+
+
+    
+
+
+
+
+    
+    
