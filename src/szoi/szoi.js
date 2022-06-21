@@ -1,13 +1,29 @@
+// document.onreadystatechange = () => {
+    
+//     if (document.readyState == "complete") {
+      
+//         renderSZOI();
+    
+//     }
+// }
 
-    const button = document.querySelector('.button_big')
+const renderSZOI = () => {
 
-    if(button){
+    const loginButton = document.querySelectorAll('.button_big')
+
+    console.log(loginButton)
+
+    // if(button){
         
-        button.classList.add("red")
+    //     button.classList.add("red")
 
-    }
+    // }
 
 
+
+}
+    
+renderSZOI()
 
 
     
