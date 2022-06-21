@@ -18,43 +18,50 @@ chrome.tabs.onActivated.addListener((activeTabInfo) => {
     })
 })
 
-chrome.tabs.onUpdated.addListener((tabId, change, tab) => {
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
-        if (change.status == 'complete'){
+        // console.log("Change info", changeInfo)
+
+        if (changeInfo.status == 'complete' && tab.active){
 
             // console.log("you are here: "+ tab.url); 
             
             checkCurrentUrl(tab.url, tabId)
         }
-    });
+    })
 
 
 
-let checkCurrentUrl = (url, currentTabId) => {
+const checkCurrentUrl = (url, currentTabId) => {
 
         // console.log('Url', url)
         // console.log('TabId', currentTabId )
 
         if(!url){
 
-            console.log("Błędny adres strony")
+            console.log("Brak adresu strony")
+
+            return
      
-
         }else if(url.includes(ezdLink)){
-
+            
+            console.log("Link do EZD")
+            
             chrome.scripting.executeScript({
-                target: {tabId: currentTabId, allFrames: true},
+                target: {tabId: currentTabId, allFrames: false},
                 files: ['./src/ezd/ezd.js']
             })
 
             chrome.scripting.insertCSS({
-                target: {tabId: currentTabId, allFrames: true},
+                target: {tabId: currentTabId, allFrames: false},
                 files: ['./src/ezd/styleEZD.css']
             })
 
-            // console.log("Link do EZD")
+            return
 
         }else if(url.includes(szoiLink)){
+
+            console.log("Link do SZOI")
 
             chrome.scripting.executeScript({
                 target: {tabId: currentTabId, allFrames: true},
@@ -66,11 +73,13 @@ let checkCurrentUrl = (url, currentTabId) => {
                 files: ['./src/szoi/styleSZOI.css']
             })
 
-            // console.log("Link do SZOI")
-   
+            return
+
         }else {
 
             console.log("Błędny adres strony")
+
+            return
 
         }
 }
