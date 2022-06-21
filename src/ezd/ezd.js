@@ -15,17 +15,40 @@ if (document.readyState === 'complete') {
 
     }
     
-    //     if(container) {
+        if(container) {
     
-    //         console.log(container)
-    
-    //         const notebtndiv = document.createElement('div')
+            console.log(container)
             
-    //         container[0].append(notebtndiv)
+            // noteButtonsDiv.innerHTML = "<button class = 'notebtn'>Opcja</button><button class = 'notebtn'>Opcja</button><button class = 'notebtn'>Opcja</button><button class = 'notebtn'>Opcja</button>";
+
+            const noteButtonsDiv = document.createElement('div')
+
+            container.append(noteButtonsDiv)
+
+            noteButtonsDiv.classList.add('noteButtonsDiv')
+
+            const noteButtons = [
+                {name: 'trn1', content: 'Tresc notatki 1'},
             
-    //         notebtndiv.innerHTML = "<button class = 'notebtn'>Opcja</button><button class = 'notebtn'>Opcja</button><button class = 'notebtn'>Opcja</button><button class = 'notebtn'>Opcja</button>";
-    
-    // }
+                {name: 'trn2', content: 'Tresc notatki 2'}
+            ]
+
+            noteButtons.map(({name}) => {
+                console.log(name)
+
+            })
+
+            // Petla dodajaca przyciski pod wzgledem ilosci elementow w tablicy noteButtons
+
+            function addButtons () {
+                
+                for (const btn in noteButtons) {
+                    
+                    document.getElementsByClassName(noteButtonsDiv).innerHTML += "<button class = 'noteButton'>" +  + "</button>"
+                }
+            }
+            addButtons()
+    }
 
 }
   
