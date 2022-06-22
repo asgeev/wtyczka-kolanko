@@ -1,7 +1,6 @@
 if (document.readyState === 'complete') {
 
     const container = document.querySelector(".pnlDodajNotatke")
-    // const notebtndiv = Object.assign(document.createElement('div'), { className: 'notebtndiv' })
 
     console.log(container)
 
@@ -10,16 +9,10 @@ if (document.readyState === 'complete') {
         console.log('Brak obiektu pnlDodajNotatke')
     
     }else{
+        
+        if (!document.querySelector('.noteButtonsDiv')){
 
-        console.log('Znaleziono obiekt pnlDodajNotatke')
-
-    }
-    
-        if(container) {
-    
-            console.log(container)
-            
-            // noteButtonsDiv.innerHTML = "<button class = 'notebtn'>Opcja</button><button class = 'notebtn'>Opcja</button><button class = 'notebtn'>Opcja</button><button class = 'notebtn'>Opcja</button>";
+            console.log('Znaleziono obiekt pnlDodajNotatke')
 
             const noteButtonsDiv = document.createElement('div')
 
@@ -28,28 +21,31 @@ if (document.readyState === 'complete') {
             noteButtonsDiv.classList.add('noteButtonsDiv')
 
             const noteButtons = [
+            
                 {name: 'trn1', content: 'Tresc notatki 1'},
             
-                {name: 'trn2', content: 'Tresc notatki 2'}
+                {name: 'trn2', content: 'Tresc notatki 2'},
+
+                {name: 'trn3', content: 'Tresc notatki 2'}
+            
             ]
 
             noteButtons.map(({name}) => {
-                console.log(name)
+
+                const noteButtonsAdd = document.createElement('button')
+            
+                noteButtonsAdd.textContent = `${name}`
+
+                noteButtonsDiv.append(noteButtonsAdd)
 
             })
 
-            // Petla dodajaca przyciski pod wzgledem ilosci elementow w tablicy noteButtons
+        }else{
 
-            function addButtons () {
-                
-                for (const btn in noteButtons) {
-                    
-                    document.getElementsByClassName(noteButtonsDiv).innerHTML += "<button class = 'noteButton'>" +  + "</button>"
-                }
-            }
-            addButtons()
+                console.log('Obiekt noteButtonsDiv istnieje')
+        }
+
     }
 
-}
-  
+    }
 
