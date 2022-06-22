@@ -1,7 +1,6 @@
 if (document.readyState === 'complete') {
 
     const container = document.querySelector(".pnlDodajNotatke")
-    // const notebtndiv = Object.assign(document.createElement('div'), { className: 'notebtndiv' })
 
     console.log(container)
 
@@ -10,23 +9,43 @@ if (document.readyState === 'complete') {
         console.log('Brak obiektu pnlDodajNotatke')
     
     }else{
+        
+        if (!document.querySelector('.noteButtonsDiv')){
 
-        console.log('Znaleziono obiekt pnlDodajNotatke')
+            console.log('Znaleziono obiekt pnlDodajNotatke')
+
+            const noteButtonsDiv = document.createElement('div')
+
+            container.append(noteButtonsDiv)
+
+            noteButtonsDiv.classList.add('noteButtonsDiv')
+
+            const noteButtons = [
+            
+                {name: 'trn1', content: 'Tresc notatki 1'},
+            
+                {name: 'trn2', content: 'Tresc notatki 2'},
+
+                {name: 'trn3', content: 'Tresc notatki 2'}
+            
+            ]
+
+            noteButtons.map(({name}) => {
+
+                const noteButtonsAdd = document.createElement('button')
+            
+                noteButtonsAdd.textContent = `${name}`
+
+                noteButtonsDiv.append(noteButtonsAdd)
+
+            })
+
+        }else{
+
+                console.log('Obiekt noteButtonsDiv istnieje')
+        }
 
     }
-    
-    //     if(container) {
-    
-    //         console.log(container)
-    
-    //         const notebtndiv = document.createElement('div')
-            
-    //         container[0].append(notebtndiv)
-            
-    //         notebtndiv.innerHTML = "<button class = 'notebtn'>Opcja</button><button class = 'notebtn'>Opcja</button><button class = 'notebtn'>Opcja</button><button class = 'notebtn'>Opcja</button>";
-    
-    // }
 
-}
-  
+    }
 
