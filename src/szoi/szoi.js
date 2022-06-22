@@ -1,35 +1,12 @@
-// document.onreadystatechange = () => {
-    
-//     if (document.readyState == "complete") {
-      
-//         renderSZOI();
-    
-//     }
-// }
-
-const renderSZOI = () => {
-
-    const loginButton = document.querySelectorAll('.button_big')
-
-    console.log(loginButton)
-
-    // if(button){
-        
-    //     button.classList.add("red")
-
-    // }
+const cokolwiek = document.getElementsByTagName("span")
+const searchText = "Dodawanie komunikatu"
+let found = ''
 
 
+for (let i = 1; i< cokolwiek.length; i++){
+    if (aTags[i].textContent == searchText) {
+        found = cokolwiek[i];
+        break;
+      }
 
 }
-    
-renderSZOI()
-
-
-    
-
-
-
-
-    
-    

@@ -22,7 +22,9 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
         // console.log("Change info", changeInfo)
 
-        if (changeInfo.status == 'complete' && tab.active){
+        // console.log("Tab", tab)
+
+        if (tab.status === 'complete' && tab.active){
 
             // console.log("you are here: "+ tab.url); 
             
@@ -53,7 +55,7 @@ const checkCurrentUrl = (url, currentTabId) => {
             })
 
             chrome.scripting.insertCSS({
-                target: {tabId: currentTabId, allFrames: false},
+                target: {tabId: currentTabId, allFrames: true},
                 files: ['./src/ezd/styleEZD.css']
             })
 
