@@ -6,7 +6,8 @@
     "permissions": ["activeTab", "declarativeContent", "storage", "tabs", "background", "scripting"],
     "background": {
         "service_worker": "./src/background.js",
-        "type": "module"
+        "type": "module",
+        "matches": [ "*://ezd.nfz-lublin.pl/*", "*://www-2.nfz-lublin.pl/ap-mzwi-adm/*"]
     },
     "host_permissions": [
         "*://ezd.nfz-lublin.pl/*",
