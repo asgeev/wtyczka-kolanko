@@ -1,3 +1,11 @@
-.button_big.red{
+.button_big.blue{
     background-color: blue ;
+}
+
+.buttonsDiv{
+    margin: 0 0 0 5px;
+    height: 25px;
+    width: 300px;
+    background-color: red !important;
+    display: inline-block;
 }
